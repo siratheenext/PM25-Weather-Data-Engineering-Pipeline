@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --bg-base:       #04070f;
+  --bg-card:       #080f1e;
+  --bg-card-hi:    #0c1528;
+  --border:        #111d33;
+  --border-hi:     #1e3054;
+  --text-primary:  #eef2f7;
+  --text-secondary:#8fa4c8;
+  --text-muted:    #5f7ba8;
+
+  --cyan:   #06b6d4;
+  --orange: #f97316;
+  --red:    #ef4444;
+  --purple: #8b5cf6;
+  --green:  #10b981;
+  --amber:  #f59e0b;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+.font-mono, code, pre, [class*="font-mono"] {
+  font-family: var(--font-mono) !important;
+}
+html {
+  font-size: 16px; /* เพิ่มเป็น 18px หรือ 20px ตามต้องการ */
+}
+
+input, select, button, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Subtle dot-grid background */
+.dot-grid {
+  background-image: radial-gradient(circle, #1e3054 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--border-hi); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Glow animation for danger cells */
+@keyframes danger-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+  50% { box-shadow: 0 0 12px 2px rgba(239,68,68,0.3); }
+}
+.danger-pulse { animation: danger-pulse 2s ease-in-out infinite; }
